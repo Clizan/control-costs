@@ -31,6 +31,11 @@ $(document).ready(function () {
 });   
 
 /*Script responsable menu.html*/
-document.getElementById('open_btn').addEventListener('click', function (){
-    document.getElementById('sidebar').classList.toggle('open-sidebar');
+document.addEventListener("DOMContentLoaded", function () {
+    var openBtn = document.getElementById('open_btn');
+    if (openBtn) {
+        openBtn.addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('open-sidebar');
+        });
+    }
 });

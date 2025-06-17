@@ -10,14 +10,11 @@
 body {
     display: flex;
     min-height: 100vh;
-    background-color: #e3e9f7;
+    background-color: #F5F5F5;
 }
 
-main {
-    padding: 20px;
-    position: fixed;
-    z-index: 1;
-    padding-left: calc(82px + 20px);
+.conteudo{
+    padding: 20px
 }
 
 #sidebar {
@@ -164,4 +161,39 @@ main {
 #sidebar.open-sidebar .side-item a {
     justify-content: flex-start;
     gap: 14px;
+}
+
+.d-flex{
+    margin-top: 40px;
+}
+
+.card_gastos{
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    padding: 20px;
+    flex-direction: column;
+    gap: 14px;
+    justify-content: space-between;
+}
+
+.card_gastos:first-child{
+    background-color: #FADADD;
+}
+
+.card_gastos:last-child{
+    background-color: #d9d2e9;
+}
+
+.tipos_gastos{
+    font-size: 16px;
+}
+
+.card_table{
+    background-color: #f4f9f2;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    padding: 20px;
+    flex-direction: column;
+    gap: 14px;
+    justify-content: space-between;
 }
