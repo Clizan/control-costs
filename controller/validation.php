@@ -1,4 +1,7 @@
 <?php
+    # create session user
+    session_start();
+
     # include connection with database
     include_once '../model/dao/connection.php';
     $objConnection = new Conexao();
@@ -23,19 +26,25 @@
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($row) {
-                $return = 1;
+                # guard user in session
+                $_SESSION['user'] = $row['user'];
+                $return = ['status' => 1, 
+                           'user' => $_SESSION['user']
+                          ];
             } else {
-                $return = 0;
+                $return = ['status' => 0];
             }
 
         } catch (Exception $e) {
             error_log("Erro de autenticação" .$e->getMessage());
-            $return = 0;
+            $return = ['status' => 0];
+
         }
     } else {
-        $return = 0;
+        $return = ['status' => 0];
+
     }
 
     # return value of the servere
-    echo json_encode((int) $return);
+    echo json_encode($return);
 ?>
